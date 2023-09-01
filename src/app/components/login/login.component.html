@@ -1,0 +1,15 @@
+<h2 class="page-header">Login</h2>
+
+<form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+    <div class="form-group">
+        <label>Email</label>
+        <input name="email" ngModel type="email" class="form-control" #emailInput="ngModel" required email>
+        <p *ngIf="loginForm.submitted && emailInput.invalid">Please enter a valid e-mail</p>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input name="password" ngModel type="password" class="form-control" #passwordInput="ngModel" required>
+        <p *ngIf="loginForm.submitted && passwordInput.invalid">Please enter a valid password</p>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Login">
+</form>

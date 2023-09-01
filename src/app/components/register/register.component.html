@@ -1,0 +1,40 @@
+<h2 class="page-header">Register</h2>
+<form (submit)="onRegister(registerForm)" #registerForm="ngForm">
+    <div class="form-group">
+        <label>Name</label>
+        <input
+            class="form-control"
+            type="text"
+            name="name"
+            ngModel
+            required
+            #name="ngModel">
+            <p *ngIf="registerForm.submitted && name.invalid">Enter a name</p>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input
+            class="form-control"
+            type="text"
+            name="email"
+            ngModel
+            required
+            #email="ngModel">
+            <p *ngIf="registerForm.submitted && email.invalid">Enter an e-mail</p>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input
+            class="form-control"
+            type="text"
+            name="password"
+            ngModel
+            required
+            #password="ngModel">
+            <p *ngIf="registerForm.submitted && password.invalid">Enter a password</p>
+    </div>
+    <input
+        type="submit"
+        class="btn btn-primary"
+        value="Submit">
+</form>

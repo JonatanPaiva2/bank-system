@@ -1,0 +1,64 @@
+<h2 class="page-header">Profile</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <label>{{ userName }}</label>
+    </div>  
+    <div class="col-md-4">
+        <label>Balance: R${{ userBalance | number: '1.2-2' }}</label>
+    </div> 
+</div>
+
+<hr>
+
+<div class="row">
+    <form (submit)="onWithdraw(withdrawForm)" #withdrawForm="ngForm">
+        <div class="col-md-4">
+            <input
+            class="form-control"
+            type="number"
+            min="0"
+            name="amount"
+            ngModel
+            required
+            #name="ngModel">
+            
+            <input
+            style="margin-top: 10px;"
+            type="submit"
+            class="btn btn-primary"
+            value="Withdraw">
+        </div> 
+    </form> 
+    
+    <hr>
+    
+    <form (submit)="onDeposit(depositForm)" #depositForm="ngForm">
+        <div class="col-md-4">
+            <input
+            class="form-control"
+            type="number"
+            min="0"
+            name="amount"
+            ngModel
+            required
+            #name="ngModel">
+            
+            <input
+            style="margin-top: 10px;"
+            type="submit"
+            class="btn btn-primary"
+            value="Deposit">
+        </div> 
+    </form> 
+    
+</div>
+
+<br>
+
+<div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+
+
+
+
+  

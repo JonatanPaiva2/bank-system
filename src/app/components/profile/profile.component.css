@@ -1,0 +1,7 @@
+.form-control {
+    width: 200px;
+}.success-message {
+    margin-top: 10px;
+    color: green;
+    font-weight: bold;
+  }
